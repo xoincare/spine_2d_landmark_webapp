@@ -138,6 +138,20 @@ gcloud run deploy spine-landmark \
     --startup-cpu-boost
 ```
 
+## 빠른 시작 요약
+
+- **15개 파일**, 1,096 lines로 구성된 경량 웹앱
+- README.md에 로컬 실행, API 사양, Docker, Cloud Run 배포 방법 포함
+- `models/best.pth`는 Phase 2 학습 완료 후 아래 명령으로 복사하면 바로 동작:
+
+```bash
+# 3d-spine 프로젝트에서 학습된 모델 가중치를 복사
+cp 3d-spine/phase2_landmark/models/best.pth spine_2d_landmark_webapp/models/best.pth
+```
+
+> `best.pth`가 없으면 서버는 시작되지만 `/analyze` 요청 시 503을 반환합니다.
+> `/health` 엔드포인트에서 `"model_loaded": false`로 확인 가능합니다.
+
 ## 기술 스택
 
 | 구성 | 기술 |
