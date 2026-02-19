@@ -7,8 +7,8 @@ import os
 # Windows에서 conda MKL과 PyTorch OpenMP 런타임 충돌 방지
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 
+import torch  # noqa: E402  # must import before numpy (Windows MKL DLL conflict)
 import numpy as np
-import torch
 from PIL import Image
 
 from .config import IMAGE_SIZE, N_LANDMARKS
