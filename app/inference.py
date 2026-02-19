@@ -55,8 +55,9 @@ def preprocess_image(image_bytes: bytes) -> tuple[torch.Tensor, tuple[int, int]]
     # 512x512 리사이즈
     img = img.resize((IMAGE_SIZE, IMAGE_SIZE), Image.BILINEAR)
 
-    # numpy → tensor, [0, 1] 정규화
-    arr = np.array(img, dtype=np.float32) / 255.0
+    # numpy → tensor, per-image min-max 정규화 (학습 시와 동일)
+    arr = np.array(img, dtype=np.float32)
+    arr = (arr - arr.min()) / (arr.max() - arr.min() + 1e-8)
     tensor = torch.from_numpy(arr).unsqueeze(0).unsqueeze(0)  # (1, 1, H, W)
 
     return tensor, original_size

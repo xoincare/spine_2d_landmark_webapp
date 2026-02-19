@@ -12,7 +12,13 @@
       "Bash(KMP_DUPLICATE_LIB_OK=TRUE python:*)",
       "Bash(conda env list:*)",
       "Bash(pip uninstall:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(git lfs:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(uvicorn:*)",
+      "Bash(git push:*)",
+      "Bash(xxd:*)"
     ]
   }
 }

@@ -76,7 +76,7 @@ class SpineLandmarkNet(nn.Module):
             try:
                 import timm
                 self.backbone = timm.create_model(
-                    backbone.replace("_", ""),
+                    backbone,
                     pretrained=pretrained,
                     features_only=True,
                     in_chans=1,
