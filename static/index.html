@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spine Landmark Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Spine 2D Landmark Analyzer</h1>
+        <p class="subtitle">X-ray 업로드 → 102개 랜드마크 검출 → Cobb angle / Kyphosis / Lordosis 자동 측정</p>
+
+        <div id="drop-zone" class="drop-zone">
+            <p>X-ray 이미지를 드래그하거나 클릭하세요</p>
+            <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>분석 중...</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="result-grid">
+                <div class="image-panel">
+                    <h2>분석 결과</h2>
+                    <img id="annotated-image" alt="Annotated X-ray">
+                </div>
+                <div class="data-panel">
+                    <h2>각도 측정</h2>
+                    <div id="angle-cards" class="angle-cards"></div>
+                    <h3>세그먼트 각도</h3>
+                    <table id="segment-table">
+                        <thead><tr><th>세그먼트</th><th>각도</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
