@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(python -c:*)",
+      "Bash(pip show:*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(/c/Windows/System32/nvidia-smi.exe:*)",
+      "Bash(conda create:*)",
+      "Bash(cmd.exe //c \"wmic logicaldisk get size,freespace,caption\")",
+      "Bash(conda list:*)",
+      "Bash(KMP_DUPLICATE_LIB_OK=TRUE python:*)",
+      "Bash(conda env list:*)",
+      "Bash(pip uninstall:*)",
+      "Bash(pip install:*)"
+    ]
+  }
+}

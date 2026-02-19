@@ -2,6 +2,10 @@
 
 import io
 import logging
+import os
+
+# Windows에서 conda MKL과 PyTorch OpenMP 런타임 충돌 방지
+os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 
 import numpy as np
 import torch
